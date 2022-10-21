@@ -73,11 +73,12 @@ class Walker {
   }
   
   void show() {
-    fill(colorer());
+    colorer();
+    fill(walkColor);
     ellipse(myX, myY, 5, 5);
   }
   
-  color colorer() {
+  void colorer() {
     int h = 0;
     int s = 74;
     int b = 97;
@@ -86,6 +87,6 @@ class Walker {
     h = (int)map(distance, 10, maxDist, 0, 360);
     s = (int)map(distance, 0, maxDist, 74, 83);
     b = (int)map(distance, 0, maxDist, 97, 85);
-    return color(h, s, b);
+    walkColor =  color(h, s, b);
   }
 }
