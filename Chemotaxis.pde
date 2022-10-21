@@ -80,9 +80,9 @@ class Walker {
     float distance = dist(myX, myY, targetX, targetY);
     float maxDist = dist(0,0,250,250);
     //h = (int)map(distance, 10, maxDist, 0, 360);
-    h = (int)map(distance, 10, maxDist, 360, 0);
-    s = (int)map(distance, 0, maxDist, 83, 74);
-    b = (int)map(distance, 0, maxDist, 85, 97);
+    h = (int)map(distance, 10, maxDist, 255, 0);
+    s = (int)map(distance, 0, maxDist, 74, 87);
+    b = (int)map(distance, 0, maxDist, 85, 255);
     return color(h, s, b);
   }
 }
