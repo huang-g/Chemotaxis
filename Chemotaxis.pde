@@ -31,7 +31,10 @@ void mouseClicked() {
 
 class Walker {
   int myX, myY;
-  color walkColor;
+
+  int h = 0;
+  int s = 74;
+  int b = 97;
   float distX, distY;
   Walker() {
     myX = (int)(Math.random()*400);
@@ -74,14 +77,11 @@ class Walker {
   
   void show() {
     colorer();
-    fill(walkColor);
+    fill(h, s, b);
     ellipse(myX, myY, 5, 5);
   }
   
   void colorer() {
-    int h = 0;
-    int s = 74;
-    int b = 97;
     float distance = dist(myX, myY, targetX, targetY);
     float maxDist = dist(0,0,250,250);
     h = (int)map(distance, 10, maxDist, 0, 360);
