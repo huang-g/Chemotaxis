@@ -3,7 +3,7 @@ int targetX = 200;
 int targetY = 200;
 void setup() {
   size(400,400);
-  colorMode(HSB);
+  //colorMode(HSB);
   for(int i = 0; i < walkers.length; i++) {
     walkers[i] = new Walker();
   }
@@ -79,9 +79,10 @@ class Walker {
     int b = 97;
     float distance = dist(myX, myY, targetX, targetY);
     float maxDist = dist(0,0,250,250);
-    h = (int)map(distance, 10, maxDist, 0, 360);
-    s = (int)map(distance, 0, maxDist, 74, 83);
-    b = (int)map(distance, 0, maxDist, 97, 85);
+    //h = (int)map(distance, 10, maxDist, 0, 360);
+    h = (int)map(distance, 10, maxDist, 360, 0);
+    s = (int)map(distance, 0, maxDist, 83, 74);
+    b = (int)map(distance, 0, maxDist, 85, 97);
     return color(h, s, b);
   }
 }
