@@ -1,11 +1,11 @@
 Walker w = new Walker();
-Walker[] walkers = new Walker[1000];
+Walker[] walkers = new Walker[500];
 int targetX = 200;
 int targetY = 200;
-colorMode(HSB);
+
 void setup() {
   size(400,400);
-  //colorMode(HSB);
+  colorMode(HSB);
   for(int i = 0; i < walkers.length; i++) {
     walkers[i] = new Walker();
   }
