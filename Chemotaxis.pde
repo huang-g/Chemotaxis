@@ -1,4 +1,3 @@
-Walker w = new Walker();
 Walker[] walkers = new Walker[500];
 int targetX = 200;
 int targetY = 200;
@@ -16,8 +15,6 @@ void setup() {
 void draw() {
   background(0);
   fill(255);
-  w.show();
-  w.walk();
   for(int i = 0; i < walkers.length; i++) {
     walkers[i].walk();
     walkers[i].show();
