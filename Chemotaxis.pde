@@ -1,7 +1,6 @@
-Walker[] walkers = new Walker[500];
+Walker[] walkers = new Walker[1000];
 int targetX = 200;
 int targetY = 200;
-
 void setup() {
   size(400,400);
   colorMode(HSB);
@@ -16,8 +15,8 @@ void draw() {
   background(0);
   fill(255);
   for(int i = 0; i < walkers.length; i++) {
-    walkers[i].walk();
     walkers[i].show();
+    walkers[i].walk();
   }
 }
 
@@ -29,9 +28,6 @@ void mouseClicked() {
 class Walker {
   int myX, myY;
 
-  int h = 0;
-  int s = 74;
-  int b = 97;
   float distX, distY;
   Walker() {
     myX = (int)(Math.random()*400);
@@ -73,17 +69,19 @@ class Walker {
   }
   
   void show() {
-    colorer();
-    fill(h, s, b);
+    fill(colorer());
     ellipse(myX, myY, 5, 5);
   }
   
-  void colorer() {
+  color colorer() {
+    int h = 0;
+    int s = 74;
+    int b = 97;
     float distance = dist(myX, myY, targetX, targetY);
     float maxDist = dist(0,0,250,250);
     h = (int)map(distance, 10, maxDist, 0, 360);
     s = (int)map(distance, 0, maxDist, 74, 83);
     b = (int)map(distance, 0, maxDist, 97, 85);
-    walkColor =  color(h, s, b);
+    return color(h, s, b);
   }
 }
